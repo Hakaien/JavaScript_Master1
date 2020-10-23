@@ -39,7 +39,7 @@ $(window).ready(function () {
     // Validation du formulaireuh !!!
     //-------------------------------
 
-    $(".form-control").on({
+    $(".formValid ").on({
         keyup: function () {
             let inputId = $(this).attr("id");
             let inputPattern = $(this).attr("pattern");
@@ -57,7 +57,7 @@ $(window).ready(function () {
     });
 
 
-    $(".form-control").on({
+    $(".form-control ").on({
         focus: function () {
             $(this).css("backgroundColor", "#888074");
             $(this).css("border", "#6D5B46")
@@ -71,43 +71,39 @@ $(window).ready(function () {
     });
     // !!!!!!!!!!!!!
 
-    $("#valider").on("click", function (e) {
+    $(".formValid ").on("click", function (e) {
         e.preventDefault();
         $("#corpus").show();
-        longueur = $(".form-control").length;
+        longueur = $(".formValid ").length;
         console.log(longueur);
 
-        for (let i = longueur; i < 0; i--) {
-            let inputId = $(".form-control").attr("id");
-            let inputPattern = $(".form-control").attr("pattern");
-            let inputSpan = $(".form-control").parent().next();
-            console.log(inpuId);
-            console.log(inputPattern);
-            try {
-                if ($("#" + inputId + "").val().match(inputPattern)) {
-                    inputSpan.text("gg").css("color", "#CFC0AE");
-                } else {
-                    throw "Erreur 66 !";
-                }
-            } catch (error) {
-                inputSpan.text(error);
-                inputSpan.css("color", "red");
+
+        let inputId = $(".formValid ").attr("id");
+        let inputPattern = $(".formValid ").attr("pattern");
+        let inputSpan = $(".formValid ").parent().next();
+        console.log(inputId);
+        console.log(inputPattern);
+        try {
+            if ($("#" + inputId + "").val().match(inputPattern)) {
+                inputSpan.text("gg").css("color", "#CFC0AE");
+            } else {
+                throw "Erreur 66 !";
             }
-        };
+        } catch (error) {
+            inputSpan.text(error);
+            inputSpan.css("color", "red");
+        }
+
     });
 
 
     //-------------------------------
 
     $("#reset").click(function () {
-        $("#spanNom3").hide();
-        $("#spanPrenom3").hide();
-        $("#spanEmail3").hide();
-        $("#spanDate3").hide();
-        $("#inputNom3").css("border", "none");
-        $("#inputPrenom3").css("border", "none");
-        $("#inputEmail3").css("border", "none");
-        $("#inputDate3").css("border", "none");
+        let inputId = $(".formValid").attr("id");
+        let inputSpan = $(".formValid ").parent().next();
+        $("#" + inputId + "").css("border", "none");
+        $("#" + inputSpan + "").hide();
     });
 
 })
