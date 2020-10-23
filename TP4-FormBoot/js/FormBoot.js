@@ -69,18 +69,15 @@ $(window).ready(function () {
             $(this).parent().parent().css("backgroundColor", "");
         },
     });
-    // !!!!!!!!!!!!!
+    // !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
-    $(".formValid ").on("click", function (e) {
+    $(".formValid ").on("blur", function (e) {
         e.preventDefault();
         $("#corpus").show();
-        longueur = $(".formValid ").length;
-        console.log(longueur);
 
-
-        let inputId = $(".formValid ").attr("id");
-        let inputPattern = $(".formValid ").attr("pattern");
-        let inputSpan = $(".formValid ").parent().next();
+        let inputId = $(this).attr("id");
+        let inputPattern = $(this).attr("pattern");
+        let inputSpan = $(this).parent().next();
         console.log(inputId);
         console.log(inputPattern);
         try {
@@ -95,6 +92,8 @@ $(window).ready(function () {
         }
 
     });
+    // !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+    // spécification checkbox/radio
 
 
     //-------------------------------
@@ -102,8 +101,8 @@ $(window).ready(function () {
     $("#reset").click(function () {
         let inputId = $(".formValid").attr("id");
         let inputSpan = $(".formValid ").parent().next();
+        inputSpan.hide();
         $("#" + inputId + "").css("border", "none");
-        $("#" + inputSpan + "").hide();
     });
 
 })
