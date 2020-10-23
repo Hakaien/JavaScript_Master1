@@ -37,28 +37,28 @@
                     <div class="form-group row">
                         <label for="inputNom3" class="col-sm-2 col-form-label">Nom</label>
                         <div class="col-sm-7">
-                            <input type="text" class="form-control" id="inputNom3" required autocomplete="off">
+                            <input type="text" class="form-control" id="inputNom3" required autocomplete="off" pattern="^[a-zA-Z_-]{4,16}$">
                         </div>
                         <span class="col-sm-3" id="spanNom3"></span>
                     </div>
                     <div class="form-group row">
                         <label for="inputPrenom3" class="col-sm-2 col-form-label">Prénom</label>
                         <div class="col-sm-7">
-                            <input type="text" class="form-control" id="inputPrenom3" required autocomplete="off">
+                            <input type="text" class="form-control" id="inputPrenom3" required autocomplete="off" pattern="^[a-zA-Z_-]{4,16}$">
                         </div>
                         <span class="col-sm-3" id="spanPrenom3"></span>
                     </div>
                     <div class="form-group row">
                         <label for="inputEmail3" class="col-sm-2 col-form-label">Email</label>
                         <div class="col-sm-7">
-                            <input type="email" class="form-control" id="inputEmail3" required autocomplete="off">
+                            <input type="email" class="form-control" id="inputEmail3" required autocomplete="off" pattern="^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$">
                         </div>
                         <span class="col-sm-3" id="spanEmail3"></span>
                     </div>
                     <div class="form-group row">
-                        <label for="inputDate3" class="col-sm-2 col-form-label">Date</label>
+                        <label for="inputDate3" class="col-sm-2 col-form-label">Naissance</label>
                         <div class="col-sm-7">
-                            <input type="date" class="form-control" id="inputDate3" required autocomplete="off">
+                            <input type="date" class="form-control" id="inputDate3" required autocomplete="off" pattern="^\d{4}\-(0?[1-9]|1[012])\-(0?[1-9]|[12][0-9]|3[01])$">
                         </div>
                         <span class="col-sm-3" id="spanDate3"></span>
                     </div>

@@ -1,10 +1,5 @@
 $(window).ready(function () {
 
-    var inputNom3Regex = /^[a-zA-Z_-]{4,16}$/;
-    var prenomRegex = /^[a-zA-Z_-]{4,16}$/;
-    var emailRegex = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
-    var dateRegex = /^\d{4}\-(0?[1-9]|1[012])\-(0?[1-9]|[12][0-9]|3[01])$/;
-
     var pirate = [
         { "id": 1, "nom": "Luffy", "image": "img/Wanted Luffy.jpg", "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer scelerisque tortor ipsum, et pellentesque ipsum tempor ac. In vel massa feugiat, egestas tortor ut, laoreet nisl. " },
         { "id": 2, "nom": "Ace", "image": "img/WantedAce.jpg", "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer scelerisque tortor ipsum, et pellentesque ipsum tempor ac. In vel massa feugiat, egestas tortor ut, laoreet nisl. " },
@@ -31,7 +26,7 @@ $(window).ready(function () {
 
     // $("#corpus").hide();
 
-    $(".report").click(function (e) {
+    $(".report").click(function () {
         $("#corpus").show();
         let hauteur = $("#corpus").offset().top;
         $("html, body").animate({ scrollTop: hauteur }, 1500);
@@ -39,116 +34,68 @@ $(window).ready(function () {
         let nom = pirate[0].nom;
         $("#p1").text("Vous dénoncez : " + nom);
         $("#p1").slideDown();
-    })
+    });
 
     // Validation du formulaireuh !!!
     //-------------------------------
 
-    // $("#inputNom3").keyup(function () {
-    //     this.value = this.value.toUpperCase();
-    //     if ($("#inputNom3").val().match(nomRegex)) {
-    //         $("#inputNom3").css("border", "2px solid green");
-    //     } else { $("#inputNom3").css("border", "2px solid red"); };
-    // });
-
-
-    // $("#inputPrenom3").keyup(function () {
-    //     this.value = this.value.charAt(0).toUpperCase() + this.value.substr(1);
-    //     let VAL = this.value;
-    //     if (prenomRegex.test(VAL)) {
-    //         $("#inputPrenom3").css("border", "2px solid green");
-    //     } else { $("#inputPrenom3").css("border", "2px solid red"); };
-    // })
-
-    $(".form-control").focus(function () {
-        $(this).css("backgroundColor", "#888074");
-        $(this).css("border", "#6D5B46")
-        $(this).parent().parent().css("backgroundColor", "black");
+    $(".form-control").on({
+        keyup: function () {
+            let inputId = $(this).attr("id");
+            let inputPattern = $(this).attr("pattern");
+            if ($("#" + inputId + "").val().match(inputPattern)) {
+                $("#" + inputId + "").css("border", "2px solid green");
+            } else { $("#" + inputId + "").css("border", "2px solid red"); };
+        },
     });
-    $(".form-control").blur(function () {
-        $(this).css("backgroundColor", "");
-        $(this).css("border", "")
-        $(this).parent().parent().css("backgroundColor", "");
+
+    $("#inputNom3").keyup(function () {
+        this.value = this.value.toUpperCase();
+    });
+    $("#inputPrenom3").keyup(function () {
+        this.value = this.value.charAt(0).toUpperCase() + this.value.substr(1);
+    });
+
+
+    $(".form-control").on({
+        focus: function () {
+            $(this).css("backgroundColor", "#888074");
+            $(this).css("border", "#6D5B46")
+            $(this).parent().parent().css("backgroundColor", "black");
+        },
+        blur: function () {
+            $(this).css("backgroundColor", "");
+            $(this).css("border", "")
+            $(this).parent().parent().css("backgroundColor", "");
+        },
     });
     // !!!!!!!!!!!!!
 
-    $(".form-control").click(function () {
-        let inputId = $(this).attr("id");
-        let regle = inputId+"Regex"
-        console.log(inputId);
-        console.log(regle);
-        try {
-            if ($("#" + inputId + "").val().match(regle)) {
-                $(this).parent().after("<span>TESTEUH</span>").css("color", "#CFC0AE");
-            } else {
-                throw "Erreur 66 !";
+    $("#valider").on("click", function (e) {
+        e.preventDefault();
+        $("#corpus").show();
+        longueur = $(".form-control").length;
+        console.log(longueur);
+
+        for (let i = longueur; i < 0; i--) {
+            let inputId = $(".form-control").attr("id");
+            let inputPattern = $(".form-control").attr("pattern");
+            let inputSpan = $(".form-control").parent().next();
+            console.log(inpuId);
+            console.log(inputPattern);
+            try {
+                if ($("#" + inputId + "").val().match(inputPattern)) {
+                    inputSpan.text("gg").css("color", "#CFC0AE");
+                } else {
+                    throw "Erreur 66 !";
+                }
+            } catch (error) {
+                inputSpan.text(error);
+                inputSpan.css("color", "red");
             }
-        }catch (error) {
-                    $("#spanNom3").text(error);
-                    $("#spanNom3").css("color", "red");
-        }
-    })
+        };
+    });
 
-    // $("#valider").click(function () {
-    //     $("#corpus").show();
-
-    //     // try {
-    //     //     if ($("#inputNom3").val().match(nomRegex)) {
-    //     //         $("#spanNom3").text("gg");
-    //     //         $("#spanNom3").css("color", "#CFC0AE");
-    //     //     } else {
-    //     //         throw "Erreur 66 !";
-    //     //     }
-    //     // } catch (error) {
-    //     //     $("#spanNom3").text(error);
-    //     //     $("#spanNom3").css("color", "red");
-
-    //     try {
-    //         if ($("#inputPrenom3").val().match(prenomRegex)) {
-    //             $("#spanPrenom3").text("gg");
-    //             $("#spanPrenom3").css("color", "#CFC0AE");
-    //         } else {
-    //             throw "Erreur 66 !";
-    //         }
-    //     } catch (error) {
-    //         $("#spanPrenom3").text(error);
-    //         $("#spanPrenom3").css("color", "red");
-    //     }
-
-    //     try {
-    //         if ($("#inputEmail3").val().match(emailRegex)) {
-    //             $("#spanEmail3").text("gg");
-    //             $("#spanEmail3").css("color", "#CFC0AE");
-    //             $("#inputEmail3").css("border", "2px solid green");
-    //         } else {
-    //             throw "Erreur 66 !";
-    //         }
-    //     } catch (error) {
-    //         $("#spanEmail3").text(error);
-    //         $("#spanEmail3").css("color", "red");
-    //         $("#inputEmail3").css("border", "2px solid red");
-    //     }
-
-    //     try {
-    //         if ($("#inputDate3").val().match(dateRegex)) {
-    //             $("#spanDate3").text("gg");
-    //             $("#spanDate3").css("color", "#CFC0AE");
-    //             $("#inputDate3").css("border", "2px solid green");
-    //         } else {
-    //             throw "Erreur 66 !";
-    //         }
-    //     } catch (error) {
-    //         $("#spanDate3").text(error);
-    //         $("#spanDate3").css("color", "red");
-    //         $("#inputDate3").css("border", "2px solid red");
-    //     }
-
-    //     // remplissage du résumé à droite par les infos du formulaire : 
-    //     // !!!!!!!!!!!!!!!!!!!!
-
-
-
-    // });
 
     //-------------------------------
 
@@ -161,6 +108,6 @@ $(window).ready(function () {
         $("#inputPrenom3").css("border", "none");
         $("#inputEmail3").css("border", "none");
         $("#inputDate3").css("border", "none");
-    })
+    });
 
 })
