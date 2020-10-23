@@ -1,0 +1,105 @@
+body {
+    background: url("./img/bg.jpg");
+    width: 90%;
+    margin: auto;
+}
+
+.corpus {
+    display: flex;
+    background-color: green;
+    padding: 1rem;
+    border-radius: 15px;
+    font-family: "Times New Roman", arial, serif;
+}
+
+header h1 {
+    text-align: center;
+    color: green;
+    font-size: 40px;
+}
+
+#lancer, #bagarre {
+    display: block;
+    width: 20%;
+    margin: auto;
+    margin-bottom: 2rem;
+    padding: .4rem;
+    background: black;
+    color: white;
+    border-radius: 12px;
+    font-size: 18px;
+    border: 2px solid yellow;
+}
+
+#bagarre {
+    display: none;
+}
+
+#lancer:hover, #bagarre:hover {
+    cursor: pointer;
+}
+
+/* //Cartes// */
+
+#cartes {
+    flex: 1.5;
+    border: 1px solid white;
+}
+
+#cartes {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+#cartes article {
+    width: 40%;
+    border: 1px solid black;
+    border-radius: 10px;
+    box-shadow: 4px 4px 10px black;
+    margin: 1rem;
+}
+
+#cartes img, #cartes input {
+    width: 100%;
+    margin: auto;
+    height: 100%;
+}
+
+.image1 {
+    background-color: rgb(235, 225, 225);
+}
+
+#batailleBleu, #batailleRouge {
+    display: none;
+}
+
+/* //Scores// */
+
+#score {
+    flex: 2;
+    border: 1px solid white;
+    display: flex;
+    flex-direction: column;
+}
+
+#score article {
+    width: 50%;
+    margin: auto;
+    background: black;
+    color: white;
+}
+
+.ssScore {
+    border: 1px solid yellow;
+    margin: 1rem;
+    padding: 1rem;
+}
+
+#score h2 {
+    text-decoration: underline;
+}
+#score div {margin: auto;}
+#temp, #temp2, #temp3, #temp4 {
+    height: 100px;
+    margin: auto;
+}

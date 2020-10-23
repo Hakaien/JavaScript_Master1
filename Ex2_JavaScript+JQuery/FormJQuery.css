@@ -1,0 +1,30 @@
+body {
+    width: 90%;
+    margin: auto;
+}
+
+.champ {
+    display: flex;
+    margin: 1rem;
+}
+
+.champ label, .champ input {
+    padding: .4rem;
+    width: 200px;
+}
+
+.champ span {
+    visibility: hidden;
+    color: red;
+    font-size: smaller;
+    padding: .4rem;
+    width: 400px;
+}
+
+.boutons input {
+    margin: 1rem;
+    width: 120px;
+    padding: .2rem;
+    border-radius: 10px;
+}
+

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="SecondDegre.css">
+    <script type="text/JavaScript" src="SecondDegre.js"></script>
+    <title>Equation du 2nd degré</title>
+</head>
+
+<body>
+    <h1>Résoluton d'une équation du Second degré de la forme :</h1>
+    <h2>aX² + bX + c = 0</h2>
+
+    <form>
+        <p id="info">Veuillez entrer vos valeurs</p>
+        <input id="valA" type="text" required pattern="^[1-9-][0-9 ]{0,}" autocomplete="off"><span> X² + </span>
+        <input id="valB" type="text" required pattern="[0-9]{1,}" autocomplete="off"><span> X + </span>
+        <input id="valC" type="text" required pattern="[0-9]{1,}" autocomplete="off"><span> = 0 </span><br>
+        <input id="calcul" type="button" value="Soumettre">
+        <input id="reset" type="reset" value="Reset">
+    </form>
+
+    <div id="result">
+        <h2 id="delta"></h2>
+        <p id="equation"></p>
+        <p id="racine1"></p>
+        <p id="racine2"></p>
+    </div>
+</body>
+
+</html>

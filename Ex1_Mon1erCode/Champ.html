@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <script src="Champ.js"></script>
+    <title>Controle de Champ</title>
+
+    <style>
+        input:invalid {
+            border: 2px dashed red;
+        }
+
+        input:valid {
+            border: 1px solid black;
+        }
+    </style>
+
+</head>
+
+<body>
+    <h3>Exemple MDN</h3>
+    <form>
+        <label for="choose">Préférez-vous la banane ou la cerise ?</label>
+        <input id="choose" name="i_like" required pattern="banane|cerise">
+        <button>Soumettre</button>
+    </form>
+    <hr />
+    <h3>Saississez un texte puis presser le bouton "Contrôle"</h3>
+    <form>
+        <label>Entrez un texte : </label>
+        <input id="contenu" type="text" required minlength="3">
+        <input id="valid" type="submit" value="Valider">
+        <!--bouton controle-->
+        <span id="misscont"></span><br>
+    </form>
+    <hr />
+    <hr />
+    <h3>Saisie d'adresse mail</h3>
+    <form>
+        <label for="mail">Entrez votre mail : </label>
+        <input id="mail" type="email" name="mail" required>
+        <input id="valmail" type="submit" value="Valider">
+        <!--bouton controle-->
+        <span id="resultmail"></span> <br />
+    </form>
+
+</body>
+
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" type="text/css" href="FormJQuery.css">
+
+
+    <title>Formulaire de Saisie JQuery</title>
+</head>
+
+<body>
+
+    <h2>Petit formulaire</h2>
+    <form>
+        <div class="champ">
+            <label>Pseudonyme</label>
+            <input id="pseudo" type="text" autocomplete="off">
+            <span id="pseudoSpan">Entrer un pseudo (lettres + chiffres)</span><br>
+        </div>
+        <div>
+            <input id="test" type="button" value="test">
+            <input id="momo" type="button" value="momo">
+        </div>
+        <div class="champ">
+            <label>Mot de passe</label>
+            <input id="mdp" type="text" autocomplete="off">
+            <span id="mdpSpan">Mdp de min 8 lettres, avec 1 majuscule et 1 chiffre.</span><br>
+        </div>
+        <div class="champ">
+            <label>Confirmation</label>
+            <input id="confirm" type="text" autocomplete="off">
+            <span id="confirmSpan">Doit correspondre au mdp</span><br>
+        </div>
+        <div class="champ">
+            <label>E-mail</label>
+            <input id="email" type="email" autocomplete="off">
+            <span id="emailSpan">Format nom@adresse.xx</span><br>
+        </div>
+        <div class="boutons">
+            <input id="envoi" type="button" value="Envoyer">
+            <input id="reset" type="reset" value="Rafaîchir">
+        </div>
+    </form>
+
+
+
+    <!-- Implant JQUery -->
+    <script src="//code.jquery.com/jquery-3.4.1.js"></script>
+    <!-- Perso -->
+    <script type="text/JavaScript" src="FormJQuery.js"></script>
+</body>
+
+</html>

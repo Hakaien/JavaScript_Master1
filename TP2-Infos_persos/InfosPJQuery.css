@@ -1,0 +1,60 @@
+body {
+    width: 80%;
+    margin: auto;
+    background-image: url(./img/bg.jpg);
+}
+
+h1 {
+    text-align: center;
+    color: rgb(218, 26, 170);
+    font-size: 48px;
+}
+
+.formulaire {
+    display: flex;
+    flex-direction: column;
+}
+
+.champ {
+    display: flex;
+    font-size: 20px;
+}
+
+.champ label, .champ div, .champ span {
+    flex: 1;
+    padding: 1rem;
+    border: 1px solid white;
+    background: rgb(44, 42, 42);
+    color: white;
+}
+
+.champ input {
+    width: 60%;
+    height: 40px;
+}
+
+.champ span { color:red;}
+
+.boutton {
+    display: flex;
+}
+
+.boutton div {
+    flex: 1;
+    background: rgb(44, 42, 42);
+    border: 1px solid white;
+    padding: 1rem;
+}
+
+.boutton input {
+    background-color: rgb(218, 26, 170);
+    border: none;
+    color: white;
+    font-size: 20px;
+    border-radius: 5px;
+    padding: .8rem;
+}
+
+.boutton input:hover {
+    cursor: pointer;
+}

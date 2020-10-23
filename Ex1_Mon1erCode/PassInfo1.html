@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="PassInfo.js"></script>
+
+    <title>Passage d'info 1</title>
+
+<style>
+    body {width:70%; margin:auto;}
+    input {margin:1rem; border-radius: 10px; padding:.2rem;}
+    label {width:60%;color:red;}
+    #bouton {padding:.5rem;}
+    
+    input:invalid {border: 2px dashed red;}
+        input:valid {border: 1px solid black;}
+    .clic:hover {cursor: pointer;}
+</style>
+
+</head>
+
+<body>
+<h1>Première page</h1>
+<form>
+<label for="nbr">Un nombre SVP</label>
+<input id="nombre" type="text" name="nbr" required pattern="[0-9]{1,}"><span id="span1"></span><br>
+<label for="txt">Un texte SVP</label>
+<input id="text" type="text" name="txt" required pattern="[a-zA-Z ]{1,}"><span id="span2"></span><br>
+
+<input id="boutonVerif" type="button" value="Vérifier les valeurs"><br>
+<input id="boutonSub" type="button" value="Envoyer les valeurs">
+</form>
+</body>
+
+</html>

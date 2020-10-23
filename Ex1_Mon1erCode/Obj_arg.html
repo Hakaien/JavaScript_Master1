@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function perimetre(largeur, longueur) {
+            var resulat = 0;
+            // test si au moins un par reçu
+            if (!largeur) resultat = 0;
+            else if (!longueur) resultat = 4 * largeur; // 1 param reçu : carré
+            else if (arguments.length == 2)
+                resultat = (largeur + longueur) * 2; //2 param: rectangle
+            else {
+                for (i in arguments) resultat += arguments[i]; //polygoneuh
+            }
+console.log(resultat);
+        }
+
+        perimetre();         //affiche 0
+        perimetre(5);        //affiche 20
+        perimetre(9,6);      //affiche 30
+        perimetre(3,7,20,8); //affiche38
+        
+
+    </script>
+</body>
+
+</html>

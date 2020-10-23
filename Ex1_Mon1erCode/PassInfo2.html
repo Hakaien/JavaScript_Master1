@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="PassInfo2.js"></script>
+
+    <style>
+        body {width: 70%; margin:auto;}
+        .formulaire {border:2px solid aqua; padding: 1rem;}
+        #navi {background: white; text-align:center ;margin-top: -28px; width: 20%; padding-left: 10px;}
+        .formulaire .texte {width:70%;}
+        .formulaire .bouton {width:20%; padding:.2rem; margin:.4rem;}
+        input:hover {cursor: pointer;}
+        #reset {margin:1rem;}
+        input{border-radius: 10px;}
+        #retour {margin:1rem;}
+    </style>
+
+    <title>Passage d'info 2</title>
+</head>
+<body>
+<h1></h1>
+<p>Informations reçues : </p>
+<br/>
+<p id="nombre"></p>
+<p id="texte"></p>
+<hr/>
+<h1>L'objet Navigateur</h1>
+
+<form class="formulaire">
+    <p id="navi">votre navigateur</p><br>
+    <input id="btn1" type="button" class="bouton" value="APPcodeNAME :" >
+    <input id="txt1" type="text" class="texte" value="reset" autocomplete="off"><br>
+    <input id="btn2" type="button" class="bouton" value="APPname :" >
+    <input id="txt2" type="text" class="texte" value="reset" autocomplete="off"><br>
+    <input id="btn3" type="button" class="bouton" value="APPversion :" >
+    <input id="txt3" type="text" class="texte" value="reset" autocomplete="off"><br>
+    <input id="btn4" type="button" class="bouton" value="USERagent :" >
+    <input id="txt4" type="text" class="texte" value="reset" autocomplete="off"><br>
+    <input type="reset" value="RESET">
+</form>
+<input id="retour" type="button" value="RETOUR">
+</body>
+</html>

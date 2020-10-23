@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="Cartes.css">
+
+    <script type="text/JavaScript" src="Cartes.js"></script>
+
+    <title>TP-Cartes</title>
+</head>
+
+<body>
+
+    <header>
+        <h1>Jeu de Bataille</h1>
+        <input id="lancer" type="button" value="LANCER">
+        <div id="result"></div>
+    </header>
+
+    <div class="corpus">
+        <section id="cartes">
+            <article class="image1">
+                <img id="paquetBleu" src="img/backcartebleuegrande.png">
+            </article>
+            <article class="image2"><img id="zoneBleu" src=""> </article>
+            <article class="image1">
+                <input id="paquetRouge" type="image" src="./img/backcartegrande.png">
+            </article>
+            <article class="image2"><img id="zoneRouge" src=""></article>
+        </section>
+        <section id="score">
+            <article>
+                <div class="ssScore">
+                    <h2>Score de Patate :</h2>
+                    <p>Score : <span id="scorePatate"></span></p>
+                    <p>Nombre de cartes : <span id="nbrPatate"></span></p>
+                </div>
+            </article>
+            <div><img id="temp"><img id="temp2"><img id="temp3"><img id="temp4"></div>
+            <article>
+                <div class="ssScore">
+                    <h2>Score de Pomme : </h2>
+                    <p>Score : <span id="scorePomme"></span></p>
+                    <p>Nombre de cartes : <span id="nbrPomme"></span></p>
+                    <div></div>
+                </div>
+            </article>
+        </section>
+    </div>
+
+</body>
+
+</html>

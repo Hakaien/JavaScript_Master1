@@ -1,0 +1,13 @@
+body  {
+    width : 40%;
+    margin: auto;
+    margin-left: 1rem;
+}
+
+#postIt {
+    background-color: yellow;
+    color: black;
+    float: right;
+    visibility: hidden;
+    padding: 1rem;
+}
