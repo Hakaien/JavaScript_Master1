@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        #tapis {
+            background: url("img/cicruitlong.png");
+            background-size: cover;
+            height: 700px;
+        }
+
+        #tapis img {
+            width: auto;
+            height: 200px;
+            margin: 1rem;
+        }
+
+        .gazon {
+            height: 110px;
+        }
+
+        button {
+            background: yellow;
+        }
+
+        #bouttons {
+            display: flex;
+            justify-content: flex-end;
+            margin: .2rem;
+            margin-right: 4rem;
+        }
+    </style>
+
+    <title>Course de voiture</title>
+</head>
+
+<body>
+    <div id="tapis">
+        <div class="gazon"></div>
+        <div id="voiture1"></div>
+        <div id="voiture2"></div>
+        <div class="gazon"></div>
+    </div>
+    <div id="bouttons">
+        <button id="btnGo">Go !</button>
+        <button id="btnStop">Stop !</button>
+    </div>
+
+    <!-- Implant JQuery -->
+    <script src="http://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
+        crossorigin="anonymous"></script>
+    <script type="text/JavaScript" src="Course2voiture.js"></script>
+</body>
+
+</html>
