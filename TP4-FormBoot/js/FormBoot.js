@@ -78,8 +78,6 @@ $(window).ready(function () {
         let inputId = $(this).attr("id");
         let inputPattern = $(this).attr("pattern");
         let inputSpan = $(this).parent().next();
-        console.log(inputId);
-        console.log(inputPattern);
         try {
             if ($("#" + inputId + "").val().match(inputPattern)) {
                 inputSpan.text("gg").css("color", "#CFC0AE");
@@ -90,13 +88,42 @@ $(window).ready(function () {
             inputSpan.text(error);
             inputSpan.css("color", "red");
         }
-
     });
+    // !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+    $("#valider").on("click", function (e) {
+        e.preventDefault();
+        //    ajout non fonctionnel, à revoir
+        let resumeIdentite = "";
+        resumeIdentite += "<h2> Votre identité </h2>";
+        resumeIdentite += "<p> Votre Nom : " + $("#inputNom3").val() + "</p>";
+        resumeIdentite += "<p> Votre Prénom : " + $("#inputPrenom3").val() + "</p>";
+        resumeIdentite += "<p> Votre Adresse mail : " + $("#inputEmail3").val() + "</p>";
+        resumeIdentite += "<p> Votre Date de naissance : " + $("#inputDate3").val() + "</p>";
+
+        console.log(resumeIdentite);
+        $("#p2").text(resumeIdentite);
+
+
+        return display();
+    });
+
     // !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
     // spécification checkbox/radio
 
+    $("input[type=radio][name=gridRadios]").on("click", function () {
+        var alertBox = "";
+        alertBox += "Vous avez sélectionner comme moyen de paiement : \n"
+        alertBox += "[" + $(this).val() + "] \n";
+        alertBox += "Vous pourrez changer avant de valider !"
+        alert(alertBox);
+    })
 
     //-------------------------------
+
+    $("#valider").on("click", function () {
+        alert("Vous allez envoyer vos informations. \n Merci de vous relire dans (resume)");
+    });
 
     $("#reset").click(function () {
         let inputId = $(".formValid").attr("id");
