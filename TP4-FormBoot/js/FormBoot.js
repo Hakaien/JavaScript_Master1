@@ -20,9 +20,9 @@ $(window).ready(function () {
         copie.find(".card-img-top").attr("src", pirate[i].image);
         copie.find(".card-title").text(pirate[i].nom);
         copie.find(".card-text").text(pirate[i].text);
+        copie.find("#btn0").attr("id", "btn" + i)
         copie.appendTo($("#slide"));
     }
-
 
     // $("#corpus").hide();
 
@@ -31,7 +31,7 @@ $(window).ready(function () {
         let hauteur = $("#corpus").offset().top;
         $("html, body").animate({ scrollTop: hauteur }, 1500);
 
-        let nom = pirate[0].nom;
+        let nom = $(this).siblings(".card-title").text();
         $("#p1").text("Vous dénoncez : " + nom);
         $("#p1").slideDown();
     });
@@ -93,19 +93,26 @@ $(window).ready(function () {
 
     $("#valider").on("click", function (e) {
         e.preventDefault();
-        //    ajout non fonctionnel, à revoir
-        let resumeIdentite = "";
-        resumeIdentite += "<h2> Votre identité </h2>";
-        resumeIdentite += "<p> Votre Nom : " + $("#inputNom3").val() + "</p>";
-        resumeIdentite += "<p> Votre Prénom : " + $("#inputPrenom3").val() + "</p>";
-        resumeIdentite += "<p> Votre Adresse mail : " + $("#inputEmail3").val() + "</p>";
-        resumeIdentite += "<p> Votre Date de naissance : " + $("#inputDate3").val() + "</p>";
+        //     //    ajout non fonctionnel, à revoir
+            let resumeIdentite = "";
+            resumeIdentite += "<h2> Votre identité </h2> \n";
+            resumeIdentite += "<p> Votre Nom : " + $("#inputNom3").val() + "</p>";
+            resumeIdentite += "<p> Votre Prénom : " + $("#inputPrenom3").val() + "</p>";
+            resumeIdentite += "<p> Votre Adresse mail : " + $("#inputEmail3").val() + "</p>";
+            resumeIdentite += "<p> Votre Date de naissance : " + $("#inputDate3").val() + "</p>";
 
-        console.log(resumeIdentite);
-        $("#p2").text(resumeIdentite);
+            console.log(resumeIdentite);
+            $("#p2").text(resumeIdentite);
 
 
-        return display();
+        //     return display();
+        let valeurRadio = $("input[type=radio][name=gridRadios]:checked").val();
+        $("#p3").text("Vous souhaitez être réglé : \n"+valeurRadio);
+        console.log(valeurRadio);
+
+        let valeurTextarea = $("#inputTextarea6").val();
+        $("#p4").text("Votre témoignage : \n"+valeurTextarea);
+        console.log(valeurTextarea);
     });
 
     // !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
