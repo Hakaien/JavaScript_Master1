@@ -11,6 +11,9 @@ $(window).ready(function () {
         { "id": 8, "nom": "El Formator", "image": "img/Wanted1.jpg", "text": "Recherché mort ou à peine vif pour faire subir un ensemble de TP a des stagiaires innocents. Cet élément est très dangereux ! " },
     ]
 
+
+    //  Création des cartes 
+    //  Méthode clone avec appelle de l'objet pirate
     $(".card-img-top").attr("src", pirate[0].image);
     $(".card-title").text(pirate[0].nom);
     $(".card-text").text(pirate[0].text);
@@ -24,8 +27,10 @@ $(window).ready(function () {
         copie.appendTo($("#slide"));
     }
 
+    // cache du formulaire
     $("#corpus").hide();
 
+    // ouverture du formulaire et récupération du nom du report
     $(".report").click(function () {
         $("#corpus").show();
         let hauteur = $("#corpus").offset().top;
@@ -39,6 +44,8 @@ $(window).ready(function () {
     // Validation du formulaireuh !!!
     //-------------------------------
 
+    // validation sur champ interne
+    // modif des couleurs des inputs et vérif RegExp
     $(".formValid ").on({
         keyup: function () {
             let inputId = $(this).attr("id");
@@ -70,6 +77,8 @@ $(window).ready(function () {
         },
     });
     // !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+    // Match regex sur blur pour l'ensemble.
+    // création d'une boucle générale pour déterminer la validation.
 
     $(".formValid ").on("blur", function (e) {
         e.preventDefault();
@@ -90,28 +99,24 @@ $(window).ready(function () {
         }
     });
     // !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-
+    // Bouton validation pour envoi des infos en resume
     $("#valider").on("click", function (e) {
         e.preventDefault();
-        //     //    ajout non fonctionnel, à revoir
-            let resumeIdentite = "";
-            resumeIdentite += "<h2> Votre identité </h2> \n";
-            resumeIdentite += "<p> Votre Nom : " + $("#inputNom3").val() + "</p>";
-            resumeIdentite += "<p> Votre Prénom : " + $("#inputPrenom3").val() + "</p>";
-            resumeIdentite += "<p> Votre Adresse mail : " + $("#inputEmail3").val() + "</p>";
-            resumeIdentite += "<p> Votre Date de naissance : " + $("#inputDate3").val() + "</p>";
-
-            console.log(resumeIdentite);
-            $("#p2").html(resumeIdentite);
+        let resumeIdentite = "";
+        resumeIdentite += "<h2> Votre identité </h2> \n";
+        resumeIdentite += "<p> Votre Nom : " + $("#inputNom3").val() + "</p>";
+        resumeIdentite += "<p> Votre Prénom : " + $("#inputPrenom3").val() + "</p>";
+        resumeIdentite += "<p> Votre Adresse mail : " + $("#inputEmail3").val() + "</p>";
+        resumeIdentite += "<p> Votre Date de naissance : " + $("#inputDate3").val() + "</p>";
+        $("#p2").html(resumeIdentite);
 
 
-        //     return display();
         let valeurRadio = $("input[type=radio][name=gridRadios]:checked").val();
-        $("#p3").text("Vous souhaitez être réglé : \n"+valeurRadio);
+        $("#p3").text("Vous souhaitez être réglé : \n" + valeurRadio);
         console.log(valeurRadio);
 
         let valeurTextarea = $("#inputTextarea6").val();
-        $("#p4").text("Votre témoignage : \n"+valeurTextarea);
+        $("#p4").text("Votre témoignage : \n" + valeurTextarea);
         console.log(valeurTextarea);
     });
 
@@ -127,6 +132,7 @@ $(window).ready(function () {
     })
 
     //-------------------------------
+    // ajout spécification sur les boutons valid/reset
 
     $("#valider").on("click", function () {
         alert("Vous allez envoyer vos informations. \n Merci de vous relire dans (resume)");
@@ -138,5 +144,14 @@ $(window).ready(function () {
         inputSpan.hide();
         $("#" + inputId + "").css("border", "none");
     });
+
+
+
+    //-------------------------------
+    // Bouton signature, mise à zéro formulaire
+    $("#signer").on("click", function () {
+        $("#corpus").hide();
+        $("#pan2").html("");
+    })
 
 })
