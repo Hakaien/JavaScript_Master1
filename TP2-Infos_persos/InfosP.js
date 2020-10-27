@@ -30,7 +30,7 @@ window.addEventListener("load", function () {
         if (prenom.value.match(prenomRegex)) {
             prenom.style.color = "green";
             prenom.style.border = "1px solid green";
-        } else { nom.style.color = "red"; };
+        } else { prenom.style.color = "red"; };
     })
 
     btnEnvoi.addEventListener("click", function () {

@@ -24,7 +24,7 @@ $(window).ready(function () {
         copie.appendTo($("#slide"));
     }
 
-    // $("#corpus").hide();
+    $("#corpus").hide();
 
     $(".report").click(function () {
         $("#corpus").show();
@@ -102,7 +102,7 @@ $(window).ready(function () {
             resumeIdentite += "<p> Votre Date de naissance : " + $("#inputDate3").val() + "</p>";
 
             console.log(resumeIdentite);
-            $("#p2").text(resumeIdentite);
+            $("#p2").html(resumeIdentite);
 
 
         //     return display();

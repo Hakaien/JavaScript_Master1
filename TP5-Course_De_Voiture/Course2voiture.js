@@ -4,7 +4,7 @@ $(window).ready(function () {
         alert('test');
     })
 
-    var Voiture = function (x, y, img) {
+    class Voiture = function (x, y, img) {
         this.x = x;
         this.y = y;
         this.dessiner(img);
