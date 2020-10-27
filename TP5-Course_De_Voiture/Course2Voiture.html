@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <style>
         #tapis {
+            flex: 2;
             background: url("img/cicruitlong.png");
             background-size: cover;
             height: 700px;
@@ -17,12 +18,13 @@
             margin: 1rem;
         }
 
-        .gazon {
-            height: 110px;
-        }
-
         button {
             background: yellow;
+            border: 2px solid black;
+            box-shadow: 10px 6px 8px black;
+            font-size: 30px;
+            margin: .5rem;
+            cursor: pointer;
         }
 
         #bouttons {
@@ -37,15 +39,15 @@
 </head>
 
 <body>
+
     <div id="tapis">
-        <div class="gazon"></div>
-        <div id="voiture1"></div>
-        <div id="voiture2"></div>
-        <div class="gazon"></div>
+        <div id="car"></div>
     </div>
+
     <div id="bouttons">
         <button id="btnGo">Go !</button>
         <button id="btnStop">Stop !</button>
+        <button id="btnReset">Reset</button>
     </div>
 
     <!-- Implant JQuery -->
